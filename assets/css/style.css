@@ -498,86 +498,57 @@
 } 
 
 /* ========Project ========== */
-.projects__container{
-  overflow: initial;
+.project-section {
+  text-align: center;
+  padding: 20px;
+  background-color:var(--body-color);
 }
 
-.projects__content{
+/* Styles for the filter buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Style when a button is active (e.g., clicked) */
+.filter-buttons button.active {
+  background-color: #0056b3;
+}
+
+/* Style for the project container */
+.project-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.projects__img{
-  width: 250px;
-   height: 110px; 
-  border-radius: .75rem;
-  margin-bottom: 1.25rem;
-}
-
-.prjects__subtitle{
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
-}
-
-.projects__title{
-  font-size: var(--h2-font-size);
-  margin-bottom: 1.25rem;
-  margin: .5rem 0 1.25rem;
-}
-
-.projects__button{
-  display: inline-flex;
+/* Styles for individual project cards */
+.project-card {
+  width: 200px;
+  height: 150px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  column-gap: .5rem;
-  color: var(--title-color);
-  font-size: var(--small-font-size);
+  font-size: 16px;
+  font-weight: bold;
 }
 
-.projects__button i{
-  font-size: 1rem;
-  transition: transform .3s;
-}
-
-.projects__button:hover i{
-  transform: translateX(.25rem);
-}
-
-/* swiper class */
-.projects__container .swiper-button-prev::after,
-.projects__container .swiper-button-next::after{
-  content: '';
-}
-
-.projects__container .swiper-button-prev
-.projects__container .swiper-button-next{
-  width: initial;
-  height: initial;
-  margin: initial;
-  font-size: 2.5rem;
-  color: var(--title-color);
-}
-
- .projects__container .swiper-button-prev{
-  left: -1rem;
-  top: 4.5rem;
-}
- 
-.projects__container .swiper-button-next{
-  right: -1rem;
-  top: 4.5rem;
-}
-
-.projects__container .swiper-slide{
-  margin-bottom: 4.5rem;
-}
-
-.projects__container .swiper-pagination-bullet{
-  bottom: 0;
-}
-
-.projects__container .swiper-pagination-bullet-active{
-  background-color: var(--title-colort);
-}  
 
 /* =====CONTACT=====*/
 .contact__container{
@@ -958,7 +929,7 @@
     color: var(--title-color);
   }
   .section{
-    padding: 8rem 0;
+    padding: 5rem 0;
   }
 
   .home__title{
@@ -993,7 +964,7 @@
     margin-bottom: 5rem;
   }
   .home__title{
-    font-size: var(--biggest-font-size);
+    font-size:2.4rem;
   }
 
   .home__blob{
@@ -1021,7 +992,7 @@
   .home__info{
     grid-template-rows: repeat(3, 130px);
     row-gap: 4rem;
-    margin-top: 16rem;
+    margin-top: 10rem;
   }
   .skills__container{
     column-gap: 10rem;
@@ -1062,7 +1033,7 @@
   }
 
   .projects__container .swiper-button-next,
-  .projects__container .swiper-button-next{
+  .projects__container .swiper-button-prev{
     font-size: 3rem;
   }
   .projects__container .swiper-button-prev{
@@ -1113,3 +1084,6 @@
     margin-top: 5rem;
   }
  }
+
+ /* -----------============------------ */
+ /* Styles for the project section */
