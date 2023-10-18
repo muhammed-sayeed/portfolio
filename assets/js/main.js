@@ -126,7 +126,7 @@ const sr = ScrollReveal({
   delay: 400,
 });
 sr.reveal(
-  `.home__data, .project-section, .footer__container, .services__container`
+  `.home__data, .project-section, .footer__container, .services__container,.contact__container`
 );
 sr.reveal(`.home__info div`, { delay: 600, origin: "bottom", interval: 100 });
 sr.reveal(`.skills__content:nth-child(1), contact__content:nth-child(1)`, {
@@ -148,27 +148,20 @@ const projects = [
   {
     name: "Project 1",
     category: "js",
+    image: '/assets/img/forum.jpg',
+    link:'http://codforum.site'
   },
   {
     name: "Project 2",
     category: "ds",
+    image: '/assets/img/e-commerce.jpg',
+    link:'http://casttillo.co'
   },
   {
     name: "Project 3",
     category: "js",
-  },
-  {
-    name: "Project 4",
-    category: "js",
-  },
-  {
-    name: "Project 5",
-    category: "js",
-  },
-  {
-    name: "Project 6",
-    category: "js",
-  },
+    image:'/assets/img/to-do.jpg'
+  }
 ];
 
 revealProject();
@@ -179,14 +172,31 @@ function displayProjects(category) {
 
   projects.forEach((project) => {
     if (category === "all" || project.category === category) {
-      const projectElement = document.createElement("div");
-      projectElement.classList.add("project-card");
-      projectElement.textContent = project.name;
-      projectContainer.appendChild(projectElement);
+      const projectCard = document.createElement("a"); // Create an anchor element for the project link
+      projectCard.href = project.link; // Set the href attribute to the project link
+      projectCard.target = "_blank"; // Add target="_blank" to open links in a new tab
+
+      const projectCardContainer = document.createElement("div");
+      projectCardContainer.classList.add("project-card");
+
+      const projectImage = document.createElement("img");
+      projectImage.src = project.image;
+      projectImage.alt = project.name;
+
+      const projectInfo = document.createElement("div");
+      projectInfo.classList.add("project-info");
+      projectInfo.innerHTML = `<h3>${project.name}</h3>`;
+
+      projectCardContainer.appendChild(projectImage);
+      projectCardContainer.appendChild(projectInfo);
+      projectCard.appendChild(projectCardContainer);
+
+      projectContainer.appendChild(projectCard);
     }
   });
-  revealProject();
+  revealProject()
 }
+
 
 const jsFilterButton = document.getElementById("js-filter");
 const dsFilterButton = document.getElementById("ds-filter");
