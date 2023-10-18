@@ -204,14 +204,23 @@ const allFilterButton = document.getElementById("all-filter");
 
 jsFilterButton.addEventListener("click", () => {
   displayProjects("js");
+  jsFilterButton.classList.add("active-button");
+  dsFilterButton.classList.remove("active-button");
+  allFilterButton.classList.remove("active-button");
 });
 
 dsFilterButton.addEventListener("click", () => {
   displayProjects("ds");
+  jsFilterButton.classList.remove("active-button");
+  dsFilterButton.classList.add("active-button");
+  allFilterButton.classList.remove("active-button")
 });
 
 allFilterButton.addEventListener("click", () => {
   displayProjects("all");
+  jsFilterButton.classList.remove("active-button");
+  dsFilterButton.classList.remove("active-button");
+  allFilterButton.classList.add("active-button")
 });
 
 displayProjects("all");

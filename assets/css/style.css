@@ -512,19 +512,23 @@
 .filter-buttons button {
   padding: 10px 20px;
   margin: 5px;
-  background-color: #007bff;
+  background-color:var(--text-color-light) ;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
-/* Style when a button is active (e.g., clicked) */
-.filter-buttons button.active {
-  background-color: #0056b3;
+.filter-buttons button:hover{
+  background-color: var(--text-color);
+}
+.filter-buttons button.active-button {
+  background-color: #202020;
+  transition: 0.4s;
 }
 
-/* Style for the project container */
+
+/* ===================Style for the project container======================= */
 .project-container {
   display: flex;
   flex-wrap: wrap;
@@ -544,11 +548,12 @@
   display: flex;
   flex-direction: column; /* Stack the image and text vertically */
   justify-content: space-between;
+  position: relative; /* Add position relative for positioning the shading layer */
+  transition: box-shadow 0.3s; /* Add a smooth transition for the box-shadow */
 }
 
-.project-card:hover .project-info{
-  font-size: 18px;
-  transition: 0.4s;
+.project-card:hover {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Add a box-shadow on hover to create a shading effect */
 }
 
 .project-card img {
@@ -561,9 +566,11 @@
   padding: 10px;
   font-size: 16px;
   font-weight: bold;
+  background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for the text */
+  backdrop-filter: blur(5px); /* Apply a blur effect to the background */
+  border-top: 1px solid #ddd; /* Add a top border for separation */
+  border-radius: 0 0 5px 5px; /* Round the bottom corners */
 }
-
-
 
 
 /* =====CONTACT=====*/
