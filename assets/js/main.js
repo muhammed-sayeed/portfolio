@@ -29,26 +29,49 @@ const contactForm = document.getElementById("contact-form"),
   contactName = document.getElementById("contact-name"),
   contactEmail = document.getElementById("contact-email"),
   contactProject = document.getElementById("contact-project"),
-  contactMessage = document.getElementById("contact-message");
+  contactMessage = document.getElementById("contact-message"),
+  submitButon = document.getElementById("submitbutton");
 
 const sendEmail = (e) => {
   e.preventDefault();
 
   if (
     contactName.value === "" ||
-    contactEmail === "" ||
-    contactProject === ""
+    contactEmail.value === "" ||
+    contactProject.value === ""
   ) {
     contactMessage.classList.remove("color-blue");
     contactMessage.classList.add("color-red");
-
     contactMessage.textContent = "Write all the input fields";
+
+    setTimeout(() => {
+      contactMessage.textContent = "";
+      contactMessage.classList.remove("color-red");
+    }, 3000);
   } else {
-    emailjs.sendForm("", "", "", "");
+    emailjs
+      .sendForm(
+        "service_21ocdv9",
+        "template_5gsu3ux",
+        "#contact-form",
+        "gAkol4G6mWusWarVc"
+      )
+      .then(() => {
+        contactMessage.classList.add("color-blue");
+        contactMessage.textContent = "message sent ✔";
+
+        contactName.value = '';
+        contactEmail.value = '';
+        contactProject.value = '';
+
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 4000);
+      });
   }
 };
 
-contactForm.addEventListener("submit", sendEmail);
+submitButon.addEventListener("click", sendEmail);
 
 // ===================SCROLL SECTION ACTIVATE LINK============
 const sections = document.querySelectorAll("section[id]");
@@ -148,20 +171,20 @@ const projects = [
   {
     name: "Project 1",
     category: "js",
-    image: '/assets/img/forum.jpg',
-    link:'http://codforum.site'
+    image: "/assets/img/forum.jpg",
+    link: "http://codforum.site",
   },
   {
     name: "Project 2",
     category: "ds",
-    image: '/assets/img/e-commerce.jpg',
-    link:'http://casttillo.co'
+    image: "/assets/img/e-commerce.jpg",
+    link: "http://casttillo.co",
   },
   {
     name: "Project 3",
     category: "js",
-    image:'/assets/img/to-do.jpg'
-  }
+    image: "/assets/img/to-do.jpg",
+  },
 ];
 
 revealProject();
@@ -194,9 +217,8 @@ function displayProjects(category) {
       projectContainer.appendChild(projectCard);
     }
   });
-  revealProject()
+  revealProject();
 }
-
 
 const jsFilterButton = document.getElementById("js-filter");
 const dsFilterButton = document.getElementById("ds-filter");
@@ -213,14 +235,28 @@ dsFilterButton.addEventListener("click", () => {
   displayProjects("ds");
   jsFilterButton.classList.remove("active-button");
   dsFilterButton.classList.add("active-button");
-  allFilterButton.classList.remove("active-button")
+  allFilterButton.classList.remove("active-button");
 });
 
 allFilterButton.addEventListener("click", () => {
   displayProjects("all");
   jsFilterButton.classList.remove("active-button");
   dsFilterButton.classList.remove("active-button");
-  allFilterButton.classList.add("active-button")
+  allFilterButton.classList.add("active-button");
 });
 
 displayProjects("all");
+
+// ====================== WATSAPP =============================
+const whatsappButton = document.getElementById("watsapp-button");
+
+whatsappButton.addEventListener("click", () => {
+  const phoneNumber = "8138846225"; // Replace with your phone number
+  const message = "Hello! Muhammed sayeed";
+
+  // Generate the WhatsApp URL
+  const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+
+  // Open the WhatsApp chat in a new tab
+  window.open(whatsappURL, "_blank");
+});

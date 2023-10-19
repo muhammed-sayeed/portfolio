@@ -564,6 +564,7 @@
 
 .project-info {
   padding: 10px;
+  color: var(--title-color);
   font-size: 16px;
   font-weight: bold;
   background: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background for the text */
@@ -605,6 +606,7 @@
 
 .contact__data{
   row-gap: .75rem;
+  cursor: pointer;
 }
 
 .contact__data-title{
@@ -627,6 +629,15 @@
   font-size: var(--small-font-size);
 }
 
+
+/* #submitbutton:hover{
+  background-color: red;
+}
+#submitbutton i{
+  font-size: 1rem;
+  transition: transform .3s;
+  color: #202020;
+} */
 .contact__button i{
   font-size: 1rem;
   transition: transform .3s;
@@ -693,8 +704,13 @@
   cursor: pointer;
   outline: none;
   margin-top: .75rem; 
+  padding: 7px;
 }
 
+.contact__form .contact__button:hover{
+ background-color: bisque;
+ border-radius: 5px;
+}
 .contact__form .contact__button i{
   font-size: 1.5rem;
   font-weight: initial;
@@ -709,10 +725,16 @@
 
 .color-red{
    color: hsl(4, 71%, 50%);
+   font-size: medium;
+   font-weight: 500;
+   transition: 0.3s;
 }
 
 .color-blue{
   color: hsl(207, 56%, 45%);
+  font-size: medium;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 /* ===========FOOTER=========== */
