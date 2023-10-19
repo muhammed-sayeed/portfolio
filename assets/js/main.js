@@ -169,20 +169,20 @@ function revealProject() {
 //-------------=====================----------------
 const projects = [
   {
-    name: "Project 1",
-    category: "js",
+    name: "codForum",
+    category: "fullstack",
     image: "/assets/img/forum.jpg",
     link: "http://codforum.site",
   },
   {
-    name: "Project 2",
-    category: "ds",
+    name: "casttillo",
+    category: "js",
     image: "/assets/img/e-commerce.jpg",
     link: "http://casttillo.co",
   },
   {
-    name: "Project 3",
-    category: "js",
+    name: "Netflix",
+    category: "api",
     image: "/assets/img/to-do.jpg",
   },
 ];
@@ -222,6 +222,8 @@ function displayProjects(category) {
 
 const jsFilterButton = document.getElementById("js-filter");
 const dsFilterButton = document.getElementById("ds-filter");
+const apiFiterButton = document.getElementById("api-filter");
+const fullFilterButton = document.getElementById("full-filter");
 const allFilterButton = document.getElementById("all-filter");
 
 jsFilterButton.addEventListener("click", () => {
@@ -229,6 +231,8 @@ jsFilterButton.addEventListener("click", () => {
   jsFilterButton.classList.add("active-button");
   dsFilterButton.classList.remove("active-button");
   allFilterButton.classList.remove("active-button");
+  apiFiterButton.classList.remove("active-button");
+  fullFilterButton.classList.remove("active-button")
 });
 
 dsFilterButton.addEventListener("click", () => {
@@ -236,13 +240,34 @@ dsFilterButton.addEventListener("click", () => {
   jsFilterButton.classList.remove("active-button");
   dsFilterButton.classList.add("active-button");
   allFilterButton.classList.remove("active-button");
+  apiFiterButton.classList.remove("active-button");
+  fullFilterButton.classList.remove("active-button")
 });
+
+apiFiterButton.addEventListener("click", ()=>{
+  displayProjects("api");
+  jsFilterButton.classList.remove("active-button");
+  dsFilterButton.classList.remove("active-button");
+  allFilterButton.classList.remove("active-button");
+  apiFiterButton.classList.add("active-button")
+})
+
+fullFilterButton.addEventListener("click", ()=>{
+  displayProjects("fullstack")
+  jsFilterButton.classList.remove("active-button");
+  dsFilterButton.classList.remove("active-button");
+  allFilterButton.classList.remove("active-button");
+  apiFiterButton.classList.remove("active-button");
+  fullFilterButton.classList.add("active-button")
+})
 
 allFilterButton.addEventListener("click", () => {
   displayProjects("all");
   jsFilterButton.classList.remove("active-button");
   dsFilterButton.classList.remove("active-button");
   allFilterButton.classList.add("active-button");
+  apiFiterButton.classList.remove("active-button");
+  fullFilterButton.classList.remove("active-button")
 });
 
 displayProjects("all");
