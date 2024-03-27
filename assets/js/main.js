@@ -169,21 +169,23 @@ function revealProject() {
 //-------------=====================----------------
 const projects = [
   {
-    name: "codForum",
-    category: "fullstack",
-    image: "/assets/img/forum.jpg",
+    name: "Bun Club",
+    category: "Static",
+    video: "/assets/videos/Bun Club.mp4",
     link: "http://codforum.site",
+    description: 'Responsive Bakery Website Design Using HTML CSS And JavaScript. Contains animations when scrolling'
   },
   {
     name: "casttillo",
     category: "js",
-    image: "/assets/img/e-commerce.jpg",
+    video: "/assets/videos/Bun Club.mp4",
     link: "http://casttillo.co",
+    description: 'Casttillo is a e-commerce platform developed using Node.js, MongoDB and template engines'
   },
   {
     name: "Netflix",
     category: "api",
-    image: "/assets/img/to-do.jpg",
+    video: "/assets/videos/Bun Club.mp4",
   },
 ];
 
@@ -202,8 +204,8 @@ function displayProjects(category) {
       const projectCardContainer = document.createElement("div");
       projectCardContainer.classList.add("project-card");
 
-      const projectImage = document.createElement("img");
-      projectImage.src = project.image;
+      const projectImage = document.createElement("iframe");
+      projectImage.src = project.video;
       projectImage.alt = project.name;
 
       const projectInfo = document.createElement("div");
