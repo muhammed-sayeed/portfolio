@@ -1067,7 +1067,8 @@
     border-radius: 10.6rem;
   }
   .home__perfil img{
-    width: 300px;
+    width: 500px;
+    height: 500px;
   }
   .home__data{
     row-gap: 2.5rem;

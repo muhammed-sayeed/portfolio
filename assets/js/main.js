@@ -201,7 +201,7 @@ function displayProjects(category) {
       projectCard.href = project.link; // Set the href attribute to the project link
       projectCard.target = "_blank"; // Add target="_blank" to open links in a new tab
 
-      const projectCardContainer = document.createElement("div");
+      const projectCardContainer = document.createElement("span");
       projectCardContainer.classList.add("project-card");
 
       const projectImage = document.createElement("iframe");
