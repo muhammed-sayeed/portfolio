@@ -317,13 +317,15 @@
     align-items: flex-end;
   }
   .home__perfil img{
-    width: 150px;
+    width: 500px;
+    height: 260px;
   }
 
   .home__social{
     justify-self: center;
     display: flex;
     column-gap: 1.25rem;
+    margin-top: 2px;
   }
 
   .home__social-link{
@@ -1068,7 +1070,7 @@
   }
   .home__perfil img{
     width: 500px;
-    height: 500px;
+    height: 460px;
   }
   .home__data{
     row-gap: 2.5rem;
